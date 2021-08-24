@@ -1,0 +1,11 @@
+- hosts: default
+  connection: local
+  gather_facts: no
+  vars_files:
+      - ../../../group_vars/local/main.yml # not required. The directory name from which the variables should be loaded.,If the path is relative, it will look for the file in vars/ subdirectory of a role or relative to playbook
+  tasks:
+    - name: link setting
+      shell: |
+        cd {{inventory_dir}}/../roles/vscode/files
+        ln -fnsv $PWD/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
+        ln -fnsv $PWD/settings.json $HOME/Library/Application\ Support/Code/User/settings.json

@@ -1,0 +1,20 @@
+- hosts: default
+  connection: local
+  gather_facts: no
+  vars_files:
+      - ../../../group_vars/local/main.yml # not required. The directory name from which the variables should be loaded.,If the path is relative, it will look for the file in vars/ subdirectory of a role or relative to playbook.
+  tasks:
+    - name: download fonts
+      git:
+          dest: "{{ local_home}}/tmp_fonts" # required. The path of where the repository should be checked out. This parameter is required, unless C(clone) is set to C(no).
+          repo: https://github.com/powerline/fonts.git  # required. git, SSH, or HTTP(S) protocol address of the git repository.
+          depth: 1
+    - name: install fonts
+      shell: ./install.sh "InconsolataDz"
+      args:
+          chdir: "{{local_home}}/tmp_fonts" # not required. cd into this directory before running the command
+    - name: clean-up fonts
+      shell: rm -rf tmp_fonts
+      args:
+          chdir: "{{local_home}}" # not required. cd into this directory before running the command
+    

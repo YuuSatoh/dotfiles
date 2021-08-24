@@ -1,0 +1,23 @@
+brew_taps:
+  - homebrew/core
+brew_cask_apps:
+  - clipy
+  - iterm2
+  - macdown
+  - sequel-pro
+  - karabiner-elements
+  - hyperswitch
+  - google-chrome 
+  - slack
+  - shiftit
+  # - xquartz # shiftitが依存
+brew_packages:
+  - awscli
+  - git 
+  - jq
+  - zsh
+  - zsh-completion
+  - zsh-syntax-highlighting
+  - peco
+  - fzf
+  - openssl

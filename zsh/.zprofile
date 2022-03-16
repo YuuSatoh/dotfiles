@@ -1,1 +1,0 @@
-/Users/satoyu/.zprezto/runcoms/zprofile

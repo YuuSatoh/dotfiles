@@ -4,16 +4,16 @@ brew_cask_apps:
   - clipy
   - iterm2
   - macdown
-  - sequel-pro
-  - karabiner-elements
+  - sequel-ace
   - hyperswitch
-  - google-chrome 
+  - google-chrome
   - slack
-  - shiftit
+  - hammerspoon
+  - docker
   # - xquartz # shiftitが依存
 brew_packages:
   - awscli
-  - git 
+  - git
   - jq
   - zsh
   - zsh-completion
@@ -21,3 +21,4 @@ brew_packages:
   - peco
   - fzf
   - openssl
+  - python3

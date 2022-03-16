@@ -5,17 +5,17 @@
 function ssh_ecs_cluster() {
     local cluster=$(aws ecs list-clusters | jq -r '.clusterArns[]' | fzf --ansi --reverse)
     if [ -z "${cluster}" ]; then
-        exit 0
+        return
     fi
 
     local service=$(aws ecs list-services --cluster $cluster | jq -r '.serviceArns[]' | fzf --ansi --reverse)
     if [ -z "${service}" ]; then
-        exit 0
+        return
     fi
 
     local task=$(aws ecs list-tasks --cluster $cluster --service-name $service | jq -r '.taskArns[]' | fzf --ansi --reverse)
     if [ -z "${task}" ]; then
-        exit 0
+        return
     fi
 
     ssh_ecs_task $cluster $task
@@ -28,12 +28,12 @@ function print_ecs_cluster() {
 function print_ecs_tasks() {
     local cluster=$(aws ecs list-clusters | jq -r '.clusterArns[]' | fzf --ansi --reverse)
     if [ -z "${cluster}" ]; then
-        exit 0
+        return
     fi
 
     local service=$(aws ecs list-services --cluster $cluster | jq -r '.serviceArns[]' | fzf --ansi --reverse)
     if [ -z "${service}" ]; then
-        exit 0
+        return
     fi
 
     aws ecs list-tasks --cluster $cluster --service-name $service | jq -r '.taskArns[]'

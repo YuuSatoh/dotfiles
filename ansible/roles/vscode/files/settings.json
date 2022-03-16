@@ -13,18 +13,6 @@
   "debug.console.fontSize": 14,
   "terminal.integrated.fontSize": 14,
   "go.formatTool": "goimports",
-  "sqltools.connections": [
-    {
-      "askForPassword": true,
-      "connectionTimeout": 30,
-      "database": "delish_signage_local",
-      "dialect": "MySQL",
-      "name": "signage-local",
-      "port": 23306,
-      "server": "127.0.0.1",
-      "username": "root"
-    }
-  ],
   "typescript.updateImportsOnFileMove.enabled": "always",
   "peacock.favoriteColors": [
     {
@@ -113,30 +101,6 @@
     "version": "0.2.0",
     "configurations": [
       {
-        "name": "Launch Signage",
-        "type": "go",
-        "request": "launch",
-        "mode": "debug",
-        "program": "delish-signage-server",
-        "port": 1325
-      },
-      {
-        "name": "Launch Flyer",
-        "type": "go",
-        "request": "launch",
-        "mode": "debug",
-        "program": "delish-flyer-server",
-        "port": 1324
-      },
-      {
-        "name": "Launch DK",
-        "type": "go",
-        "request": "launch",
-        "mode": "debug",
-        "program": "delish-server",
-        "port": 1323
-      },
-      {
         "name": "Launch Kelo",
         "type": "go",
         "request": "launch",
@@ -145,21 +109,14 @@
         "port": 1323
       },
       {
-        "name": "Launch Payment",
-        "type": "go",
-        "request": "launch",
-        "mode": "debug",
-        "program": "delish-payment",
-        "port": 1324
-      },
-      {
         "name": "Launch",
         "type": "go",
         "request": "launch",
         "mode": "auto",
         "program": "${fileDirname}",
         "env": {},
-        "args": []
+        "args": [],
+        "dlvFlags": ["--check-go-version=false"]
       }
     ]
   },
@@ -228,7 +185,6 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
-  "diffEditor.ignoreTrimWhitespace": false,
   "jupyter.askForKernelRestart": false,
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
@@ -237,5 +193,39 @@
     "default": "right",
     "jupyter-notebook": "left"
   },
-  "window.zoomLevel": -1
+  "ruby.useLanguageServer": true,
+  "ruby.codeCompletion": "rcodetools",
+  "ruby.intellisense": "rubyLocate",
+  "ruby.lint": {
+    "rubocop": {
+      // RuboCop, Standard or Reek
+      "useBundler": true // bundlerでインストールしているgemを使うか否か
+    }
+  },
+  "ruby.useBundler": true, // VSCodeが実行するgem関連のコマンドをbundle execで実行するかどうか
+  "ruby.format": "rubocop",
+  "redhat.telemetry.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "githubPullRequests.fileListLayout": "flat",
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust"
+  },
+  "python.insidersChannel": "weekly",
+  "[python]": {
+    "gitlens.codeLens.symbolScopes": ["!Module"],
+    "editor.wordBasedSuggestions": false
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "C_Cpp.autocompleteAddParentheses": true,
+  "window.zoomLevel": -1,
+  "code-runner.executorMap": {
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "workbench.editor.navigationScope": "editorGroup",
+  "[sql]": {
+    "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+  }
 }

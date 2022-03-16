@@ -546,5 +546,67 @@
   {
     "key": "alt+r",
     "command": "bracketeer.changeQuotesTo"
+  },
+  {
+    "key": "cmd+numpad1",
+    "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "cmd+1",
+    "command": "-workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "cmd+numpad2",
+    "command": "workbench.action.focusSecondEditorGroup"
+  },
+  {
+    "key": "cmd+2",
+    "command": "-workbench.action.focusSecondEditorGroup"
+  },
+  {
+    "key": "cmd+numpad3",
+    "command": "workbench.action.focusThirdEditorGroup"
+  },
+  {
+    "key": "cmd+3",
+    "command": "-workbench.action.focusThirdEditorGroup"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "mysql.runQuery",
+    "when": "editorLangId == 'sql'"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-mysql.runQuery",
+    "when": "editorLangId == 'sql'"
+  },
+  {
+    "key": "ctrl+shift+cmd",
+    "command": "mysql.runAllQuery",
+    "when": "editorLangId == 'sql'"
+  },
+  {
+    "key": "ctrl+shift+enter",
+    "command": "-mysql.runAllQuery",
+    "when": "editorLangId == 'sql'"
+  },
+  {
+    "key": "pageDown",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": ["cursorDown", "cursorDown", "cursorDown", "emacs.C-l"]
+    }
+  },
+  {
+    "key": "pageUp",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": ["cursorUp", "cursorUp", "cursorUp", "emacs.C-l"]
+    }
+  },
+  {
+    "key": "cmd+,",
+    "command": "deleteInsideWord"
   }
 ]

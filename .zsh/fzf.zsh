@@ -75,7 +75,7 @@ bindkey '^R' fzf-history-selection
 
 function fzf-cd-z() {
     local current_buffer=$BUFFER
-    local selected_line="$(z -l $current_buffer 2>&1 | fzf | awk '{ print $2 }' | head -n 1)"
+    local selected_line="$(z -l $current_buffer 2>&1 | fzf --tac | awk '{ print $2 }' | head -n 1)"
 
     echo "$selected_line"
     if [ -n "${selected_line}" ]; then
@@ -84,7 +84,7 @@ function fzf-cd-z() {
     fi
 }
 zle -N fzf-cd-z
-bindkey "^f" fzf-cd-z
+bindkey "^j" fzf-cd-z
 
 function fzf-docker-sh() {
     local selected_line="$(docker ps --format "{{.ID}} {{.Names}} {{.Image}} {{.Command}}" | fzf | awk '{ print $1}')"

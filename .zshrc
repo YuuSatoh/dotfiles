@@ -17,3 +17,6 @@ local_settings=~/.zsh/zshrc.local
 if [ -e $local_settings ]; then
     source $local_settings
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

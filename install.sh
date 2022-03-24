@@ -26,6 +26,9 @@ for dotfile in .?*; do
     fi
 done
 
+# symlink iterm2
+symlink "$PWD/iterm2/com.googlecode.iterm2.plist" ~/Library/ApplicationSupport/iTerm2/Scripts
+
 # install homebrew
 if ! command -v brew >/dev/null 2>&1; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

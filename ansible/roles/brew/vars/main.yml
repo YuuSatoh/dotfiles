@@ -10,6 +10,7 @@ brew_cask_apps:
   - slack
   - hammerspoon
   - docker
+  - maccy
   # - xquartz # shiftitが依存
 brew_packages:
   - awscli

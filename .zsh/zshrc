@@ -35,7 +35,7 @@ alias code="code-insiders"
 source <(kubectl completion zsh)
 export GOPATH=${HOME}/go
 export GO111MODULE=on
-export PATH=$PATH:$(npm bin -g)
+# export PATH=$PATH:$(npm bin -g)
 export GOENV_ROOT=$HOME/.goenv
 export PATH=$GOENV_ROOT/bin:$PATH
 export PATH=$GOPATH/bin:$PATH

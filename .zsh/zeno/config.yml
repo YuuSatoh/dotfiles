@@ -44,5 +44,5 @@ completions:
     sourceCommand: "ls $(echo $BUFFER | cut -d ' ' -f2) | grep / | awk '{print $1}'"
     options:
       --prompt: "'cd dir> '"
-      --preview: 'ls -la {}'
+      --preview: "ls -lF $(echo $BUFFER | cut -d ' ' -f2){}"
     callback: awk '{print $1}'

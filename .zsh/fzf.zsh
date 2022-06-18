@@ -77,7 +77,6 @@ function fzf-cd-z() {
     local current_buffer=$BUFFER
     local selected_line="$(z -l $current_buffer | fzf --tac | awk '{ print $2 }' | head -n 1)"
 
-    echo $selected_line
     if [ -n "${selected_line}" ]; then
         BUFFER="cd ${selected_line}"
         zle .accept-line

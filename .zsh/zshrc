@@ -58,11 +58,13 @@ alias jq='jq -C'
 alias ls='ls -GF'
 alias ll='ls -lh'
 alias la='ls -lAh'
+# fzf extends
+alias fcd='cd'
 
 # -------
 # global alias
 # -------
-alias -g G='| ag'
+alias -g G='| grep'
 alias -g H='| head'
 alias -g J='| jq .'
 alias -g L='| less'

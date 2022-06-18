@@ -15,3 +15,4 @@ export GOENV_ROOT=$HOME/.goenv
 export PATH=$GOENV_ROOT/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export GOENV_DISABLE_GOPATH=1
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'

@@ -86,6 +86,18 @@ function fzf-cd-z() {
 zle -N fzf-cd-z
 bindkey "^j" fzf-cd-z
 
+function fzf-path() {
+    local current_buffer=$BUFFER
+    local selected_line="$(find . -type d -not -path './node_modules/*' -not -path './.*' | fzf)"
+
+    if [ -n "${selected_line}" ]; then
+        BUFFER="$current_buffer${selected_line}"
+        CURSOR=${#BUFFER}
+    fi
+}
+zle -N fzf-path
+bindkey "^f" fzf-path
+
 function fzf-docker-sh() {
     local selected_line="$(docker ps --format "{{.ID}} {{.Names}} {{.Image}} {{.Command}}" | fzf | awk '{ print $1}')"
 

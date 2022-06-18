@@ -19,6 +19,15 @@ touch ".zsh/zshenv.local"
 touch ".zsh/zprofile.local"
 touch "$HOME/.gitconfig.local"
 
+# zprezto
+folder=~/.zprezto/
+if ! git clone --recursive "https://github.com/sorin-ionescu/prezto.git" "${folder}" 2>/dev/null && [ -d "${folder}" ]; then
+    echo "Clone failed because the folder ${folder} exists"
+fi
+
+symlink ~/.zprezto/runcoms/zlogin ~/.zlogin
+symlink ~/.zprezto/runcoms/zlogout ~/.zlogout
+
 # zeno
 folder=~/.zeno/
 if ! git clone "https://github.com/yuki-yano/zeno.zsh.git" "${folder}" 2>/dev/null && [ -d "${folder}" ]; then
@@ -27,7 +36,7 @@ fi
 
 # symlink dotfile
 for dotfile in .?*; do
-    if [ $dotfile != ".." ] && [ $dotfile != ".git" ] && [ $dotfile != ".gitmodules" ] && [ $dotfile != ".config" ]; then
+    if [ $dotfile != ".." ] && [ $dotfile != ".git" ] && [ $dotfile != ".gitmodules" ]; then
         symlink "$PWD/$dotfile" "$HOME/$dotfile"
     fi
 done

@@ -20,7 +20,10 @@ touch ".zsh/zprofile.local"
 touch "$HOME/.gitconfig.local"
 
 # zeno
-git clone https://github.com/yuki-yano/zeno.zsh.git ~/.zeno/
+folder=~/.zeno/
+if ! git clone "https://github.com/yuki-yano/zeno.zsh.git" "${folder}" 2>/dev/null && [ -d "${folder}" ]; then
+    echo "Clone failed because the folder ${folder} exists"
+fi
 
 # symlink dotfile
 for dotfile in .?*; do

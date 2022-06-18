@@ -1,0 +1,48 @@
+snippets:
+  - name: git status
+    keyword: gs
+    snippet: git status --short --branch
+  - name: git commit message
+    keyword: gcim
+    snippet: git commit -m '{{commit_message}}'
+  - name: tee stdout
+    keyword: tea
+    snippet: '| tee -a "{{file_name}}"'
+    context:
+      lbuffer: '.+\s'
+  - name: fzf pipe
+    keyword: ff
+    snippet: '| fzf'
+    context:
+      lbuffer: '.+\s'
+  - name: 'null'
+    keyword: 'null'
+    snippet: '>/dev/null 2>&1'
+    context:
+      # buffer: ''
+      lbuffer: '.+\s'
+      # rbuffer: ''
+  - name: branch
+    keyword: B
+    snippet: git symbolic-ref --short HEAD
+    context:
+      lbuffer: '^git\s+checkout\s+'
+    evaluate: true # eval snippet
+
+completions:
+  - name: kill
+    patterns:
+      - '^kill( -9)? $'
+    sourceCommand: 'ps -ef | sed 1d'
+    options:
+      --multi: true
+      --prompt: "'Kill Process> '"
+    callback: "awk '{print $2}'"
+  - name: fuzzy cd
+    patterns:
+      - '^fcd.*$'
+    sourceCommand: "ls $(echo $BUFFER | cut -d ' ' -f2) | grep / | awk '{print $1}'"
+    options:
+      --prompt: "'cd dir> '"
+      --preview: 'ls -la {}'
+    callback: awk '{print $1}'

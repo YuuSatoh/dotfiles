@@ -19,6 +19,9 @@ touch ".zsh/zshenv.local"
 touch ".zsh/zprofile.local"
 touch "$HOME/.gitconfig.local"
 
+# zeno
+git clone https://github.com/yuki-yano/zeno.zsh.git ~/.zeno/
+
 # symlink dotfile
 for dotfile in .?*; do
     if [ $dotfile != ".." ] && [ $dotfile != ".git" ] && [ $dotfile != ".gitmodules" ] && [ $dotfile != ".config" ]; then

@@ -30,7 +30,8 @@ for dotfile in .?*; do
 done
 
 # symlink iterm2
-symlink "$PWD/iterm2/com.googlecode.iterm2.plist" ~/Library/ApplicationSupport/iTerm2/Scripts
+path=~/Library/Application\ Support/iTerm2/Scripts
+symlink "$PWD/iterm2/com.googlecode.iterm2.plist" $path
 
 # install homebrew
 if ! command -v brew >/dev/null 2>&1; then

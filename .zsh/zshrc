@@ -87,3 +87,6 @@ source ~/.zsh/fzf.zsh
 source ~/.zsh/peco.zsh
 # zeno
 source ~/.zsh/zeno.zsh
+
+# auto suggestion color
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"

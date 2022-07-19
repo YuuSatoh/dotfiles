@@ -42,6 +42,9 @@ alias rebase-develop="git switch develop; git pull upstream develop --ff-only; g
 alias rebase-i='git log --oneline --color | fzf --ansi --reverse | cut -d " " -f 1 | xargs git rebase -i'
 alias delete-branch="git branch --merged | egrep -v '\*|develop|master' | xargs git branch -d"
 alias code="code-insiders"
+alias ghprv="gh pr list | fzf | cut -c 1-4 | xargs gh pr view --web"
+alias ghprch="gh pr list | fzf | cut -c 1-4 | xargs gh pr checkout"
+
 #上の階層
 alias -g ...='../..'
 alias -g ....='../../..'
@@ -70,6 +73,7 @@ alias -g J='| jq .'
 alias -g L='| less'
 alias -g P='| pbcopy'
 alias -g T='| tail'
+alias -g F='| fzf'
 # view STDOUT with less (e.g. aws s3 cp s3://foo.csv SL)
 alias -g SL="- | less"
 

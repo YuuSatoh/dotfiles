@@ -27,6 +27,7 @@ casks=(
     docker
     maccy
     postman
+    rectangle
 )
 
 # brew

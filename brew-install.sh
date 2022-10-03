@@ -15,6 +15,7 @@ brews=(
     deno
     gh
     nvm
+    z
 )
 
 casks=(

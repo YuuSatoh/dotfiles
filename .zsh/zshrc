@@ -38,13 +38,15 @@ compinit -u
 # -------
 alias pr="gh pr list | peco | xargs gh pr view"
 alias sw="git branch | peco | xargs git switch"
-alias rebase-develop="git switch develop; git pull develop --ff-only; git switch - ;git rebase develop"
-alias merge-develop="git switch develop; git pull develop --ff-only; git switch - ;git merge develop"
+alias rebase-develop="git switch develop; git pull origin develop --ff-only; git switch - ;git rebase develop"
+alias merge-develop="git switch develop; git pull origin develop --ff-only; git switch - ;git merge develop"
 alias sw-undo="git switch -"
+alias sw-develop="git switch develop"
 alias checkout-reset="git checkout ."
 alias glog="git log --oneline --color | fzf --ansi --reverse"
 alias rebase-i='git log --oneline --color | fzf --ansi --reverse | cut -d " " -f 1 | xargs git rebase -i'
 alias delete-branch="git branch --merged | egrep -v '\*|develop|master' | xargs git branch -d"
+alias new-branch="git checkout -b"
 alias code="code-insiders"
 alias ghprv="gh pr list | fzf | cut -c 1-4 | xargs gh pr view --web"
 alias ghprch="gh pr list | fzf | cut -c 1-4 | xargs gh pr checkout"
